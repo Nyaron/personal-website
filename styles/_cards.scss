@@ -1,0 +1,20 @@
+.card-deck {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  @include media-breakpoint-up(md) {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  .card {
+    flex: 0 0 auto;
+    max-width: 75vw;
+
+    @include media-breakpoint-up(md) {
+      flex: 1 0 0%;
+      max-width: none;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.lnk-twitch {
+  background-color: #6441A5;
+}
+
+.lnk-fb {
+  background-color: #3B5998;
+}
+
+.lnk-twttr {
+  background-color: #1DA1F2;
+}
+
+.lnk-linked {
+  background-color: #0077B5;
+}
+
+.lnk-yt {
+  background-color: #F00;
+}
+
+.lnk-email {
+  background-color: #FED766;
+  color: #252934;
+}
+
+.lnk-title {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: inline-block;
+  }
+}
+
+.yt-wrapper,
+.twitch-wrapper {
+  display: inline-block;
+  text-align: left;
+  
+  > img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+
+.yt-wrapper {
+  background-color: #282828;
+  
+  > div {
+    margin: 10px 0 10px 10px !important;
+  }
+}
+
+.twitch-wrapper {
+  background-color: #2B2B2B;
+}

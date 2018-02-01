@@ -1,0 +1,28 @@
+.scrolling-wrapper {
+  background:
+    linear-gradient(to right, #333 20%, rgba(0,0,0,0)),
+    linear-gradient(to right, rgba(0,0,0,0), #333 80%) 0 100%,
+    linear-gradient(to right, #FFF, rgba(0,0,0,0) 20%),
+    linear-gradient(to left, #FFF, rgba(0,0,0,0) 20%);
+  background-attachment: local, local, scroll, scroll;
+  border-radius: .5rem;
+  display: flex;
+  flex-wrap: no-wrap;
+  overflow-x: auto;
+  padding: 7px 15px;
+
+  @include media-breakpoint-up(md) {
+    background: transparent;
+    display: block;
+    overflow-x: visible;
+  }
+
+  .scrolling-content {
+    flex: 0 0 auto;
+    max-width: 75vw;
+
+    @include media-breakpoint-up(md) {
+      max-width: none;
+    }
+  }
+}

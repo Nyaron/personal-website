@@ -1,0 +1,76 @@
+// Based on Retro Button by Dario Corsi (https://codepen.io/dariocorsi/pen/xpLgrL)
+$retro-button-height: 3rem !default;
+$retro-color-text: rgba(0,0,0,.25) !default;
+$retro-color-text-shadow: rgba(255,255,255,.15) !default;
+$retro-color-page-bg: #B9B5AA !default;
+$retro-color-bg: #899095 !default;
+$retro-color-bg-light: #969DA3 !default;
+$retro-color-bg-dark: #7D878F !default;
+$retro-color-overlay-light: rgba(255,255,255,.2) !default;
+$retro-color-overlay-medium: rgba(0,0,0,.1) !default;
+$retro-color-overlay-dark: rgba(0,0,0,.2) !default;
+$retro-color-tab-focus: rgba(255,255,255,.15) !default;
+
+.retro-button {
+  appearance: none;
+  background: $retro-color-bg;
+  border: 0;
+  border-radius: $retro-button-height / 2;
+  box-shadow: -1px  -1px 1px $retro-color-bg, //top highlight
+    0 0 0 4px $retro-color-overlay-medium, //outer shadow
+    1px  1px 1px $retro-color-bg-dark, //bottom lowlight
+    inset .0 .0 .0 $retro-color-overlay-dark, //inset shadow    
+    inset .5rem .5rem .25rem $retro-color-bg-light; //button gloss
+  box-sizing: border-box;
+  color: $retro-color-text;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: $retro-button-height / 3;
+  font-weight: 800;
+  height: $retro-button-height;
+  letter-spacing: .1em;
+  line-height: $retro-button-height;
+  margin: 6px 6px;
+  min-width: calc($retro-button-height - 30px);
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  text-shadow: 1px 1px $retro-color-text-shadow;
+  text-transform: uppercase;
+  transition: all 200ms ease;
+
+  &:focus {
+    box-shadow: -1px -1px 1px $retro-color-bg-dark, //top highlight
+      0 0 0 4px $retro-color-tab-focus, //outer shadow
+      1px  1px 1px $retro-color-bg-dark, //bottom lowlight
+      inset 0 0 0 $retro-color-overlay-dark, //inset shadow
+      inset .5rem .5rem .25rem $retro-color-bg-light; //button gloss
+    outline: 0;
+  }
+
+  &:hover {
+    box-shadow: -1px -1px 1px $retro-color-bg-dark, //top highlight
+      0 0 0 4px $retro-color-overlay-dark, //outer shadow
+      1px  1px 1px $retro-color-bg-dark, //bottom lowlight
+      inset 0 0 0 $retro-color-overlay-dark, //inset shadow
+      inset .5rem .5rem .25rem $retro-color-bg-light; //button gloss
+    color: $retro-color-text;
+  }
+
+  &:active {
+    box-shadow: inset 1px 1px 1px $retro-color-bg, //top highlight   
+      0 0 0 4px $retro-color-overlay-dark, //outer shadow
+      inset -1px -1px 1px $retro-color-bg-light, //bottom lowlight    
+      inset .5rem .5rem .75rem $retro-color-bg-dark, //inset shadow
+      inset .5rem .5rem .5rem $retro-color-bg-light; //button gloss
+  }
+}
+
+a.retro-button {
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

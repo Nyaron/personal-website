@@ -1,0 +1,26 @@
+.list-badges {
+  list-style: none;
+  margin-bottom: .5rem;
+  padding-left: 0;
+
+  > li {
+    background-color: #000;
+    border-radius: .25rem;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1;
+    padding: .25em .4em;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+
+    @include media-breakpoint-up(md) {
+      background-color: transparent;
+      display: block;
+      font-weight: normal;
+      line-height: 1.5;
+      padding: 0;
+      text-align: left;
+    }
+  }
+}

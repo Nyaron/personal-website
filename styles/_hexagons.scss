@@ -1,0 +1,115 @@
+.wrap {
+  color: #222;
+  font-size: 24px;
+
+  @include media-breakpoint-up(lg) {
+    display: table;
+    width: 100%;
+  }
+}
+
+.clip-row {
+  @include media-breakpoint-up(lg) {
+    display: table-row;
+    
+    &:nth-child(even) {
+      // transform: translate(130px, -88px);
+      .clip-each {
+        transform: translate(130px, -88px);
+
+        &.active {
+          transform: none;
+        }
+      }
+    }
+  }  
+
+}
+
+.clip-block {
+  @include media-breakpoint-up(lg) {
+    @include clearfix;
+
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.clip-caption {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.clip-content {
+  font-size: 12px;
+  display: none;
+
+  .close {
+    color: inherit;
+    cursor: pointer;
+    font-size: 3rem;
+    opacity: 1;
+    position: relative;
+    top: -15px;
+  }
+}
+
+.clip-each {
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  clip-path: url("#hexagon-clip");
+  cursor: pointer;
+  display: block;
+  float: left;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  &:not(:first-child) {
+    @include media-breakpoint-up(lg) {
+      margin-left: 101px;
+    }
+  }
+
+  &.active {
+    clip-path: none;
+    cursor: auto;
+    height: 100vh;
+    left: 0;
+    margin-left: 0;
+    padding-top: 50px;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 2;
+
+    .clip-caption {
+      display: none;
+    }
+
+    .clip-content {
+      display: block;
+    }
+  }
+}
+
+.clip-gradient {
+  background-color: #222;
+  color: #FFF;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  width: 50px;
+
+  @include media-breakpoint-up(lg) {
+    height: 160px;
+    width: 160px;
+  }
+}
+
+.clip-svg {
+  width: 0;
+  height: 0;
+}
