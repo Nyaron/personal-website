@@ -14,7 +14,28 @@
 
     @include media-breakpoint-up(md) {
       flex: 1 0 0%;
-      max-width: none;
+      max-width: calc((100% - 60px)/3);
     }
   }
+}
+
+.card-header,
+.card-footer {
+  padding: .5rem .9rem;
+  
+  @include media-breakpoint-up(md) {
+    padding: .75rem 1.25rem;
+  }
+}
+
+.card-body {
+  padding: .5rem;
+
+  @include media-breakpoint-up(md) {
+    padding: 1.25rem;
+  }
+}
+
+.card-custom {
+  
 }

@@ -1,0 +1,21 @@
+.flag {
+  background-color: transparent;
+  background-positon: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  vertical-align: baseline;
+  width: 1.5rem;
+
+  &-button {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  &-fr {background-image: url(/static/flag-fr.png);}
+  &-en {background-image: url(/static/flag-en.png);}
+  &-pirate {background-image: url(/static/flag-yarr.png);}
+}

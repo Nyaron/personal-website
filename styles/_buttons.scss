@@ -64,6 +64,13 @@ $retro-color-tab-focus: rgba(255,255,255,.15) !default;
       inset .5rem .5rem .75rem $retro-color-bg-dark, //inset shadow
       inset .5rem .5rem .5rem $retro-color-bg-light; //button gloss
   }
+
+  &.disabled,
+  &:disabled {
+    background-color: darken($retro-color-bg, 5%);
+    cursor: default;
+    opacity: .65;
+  }
 }
 
 a.retro-button {

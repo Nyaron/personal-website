@@ -1,26 +1,75 @@
+.lnk-twitch,
+.lnk-fb,
+.lnk-twttr,
+.lnk-linked,
+.lnk-yt,
+.lnk-email {
+  &.active {
+    background-color: lighten(#252934, 10%);
+  }
+
+  .description {
+    border-left: 3px solid;
+    padding-left: .8rem;
+    text-align: left;
+
+    + .retro-button {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
 .lnk-twitch {
   background-color: #6441A5;
+
+  .description {
+    border-left-color: #6441A5;
+  }
 }
 
 .lnk-fb {
   background-color: #3B5998;
+
+  .description {
+    border-left-color: #3B5998;
+  }
 }
 
 .lnk-twttr {
   background-color: #1DA1F2;
+
+  .description {
+    border-left-color: #1DA1F2;
+  }
 }
 
 .lnk-linked {
   background-color: #0077B5;
+
+  .description {
+    border-left-color: #0077B5;
+  }
 }
 
 .lnk-yt {
   background-color: #F00;
+
+  .description {
+    border-left-color: #F00;
+  }
 }
 
 .lnk-email {
   background-color: #FED766;
   color: #252934;
+
+  &.active {
+    color: #FFF;
+  }
+
+  .description {
+    border-left-color: #FED766;
+  }
 }
 
 .lnk-title {
@@ -54,4 +103,16 @@
 
 .twitch-wrapper {
   background-color: #2B2B2B;
+}
+
+.contact-form {
+  text-align: left;
+
+  textarea {
+    max-height: 75px;
+
+    @include media-breakpoint-up(lg) {
+      max-height: none;
+    }
+  }
 }

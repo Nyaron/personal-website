@@ -13,9 +13,8 @@
     display: table-row;
     
     &:nth-child(even) {
-      // transform: translate(130px, -88px);
       .clip-each {
-        transform: translate(130px, -88px);
+        transform: translate(125px, -87px);
 
         &.active {
           transform: none;
@@ -44,15 +43,16 @@
 }
 
 .clip-content {
-  font-size: 12px;
   display: none;
+  font-size: 1rem;
 
   .close {
     color: inherit;
     cursor: pointer;
     font-size: 3rem;
     opacity: 1;
-    position: relative;
+    position: absolute;
+    right: 15px;
     top: -15px;
   }
 }
@@ -65,24 +65,27 @@
   float: left;
   margin: 0 auto;
   position: relative;
+  transition: padding .5s ease-out;
   z-index: 1;
 
   &:not(:first-child) {
     @include media-breakpoint-up(lg) {
-      margin-left: 101px;
+      margin-left: 90px;
     }
   }
 
   &.active {
+    bottom: 0;
     clip-path: none;
     cursor: auto;
-    height: 100vh;
+    height: auto;
     left: 0;
     margin-left: 0;
     padding-top: 50px;
     position: absolute;
+    right: 0;
     top: 0;
-    width: 100vw;
+    width: auto;
     z-index: 2;
 
     .clip-caption {
@@ -91,6 +94,15 @@
 
     .clip-content {
       display: block;
+      max-height: 85vh;
+      -webkit-overflow-scrolling: auto;
+      overflow-y: auto;
+      position: relative;
+
+      @include media-breakpoint-up(lg) {
+        max-height: none;
+        overflow-y: visible;
+      }
     }
   }
 }

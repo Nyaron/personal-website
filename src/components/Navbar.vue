@@ -7,7 +7,7 @@
       type="button" 
       :class="{active:index == 0}" 
       @click="scrollTo(0)">
-      Me
+      {{ $t("navbar.me") }}
     </button>
     <button 
       tabindex="-1" 
@@ -15,7 +15,7 @@
       type="button" 
       :class="{active:index == 1}" 
       @click="scrollTo(1)">
-      My Expertise
+      {{ $t("navbar.expertise") }}
     </button>
     <button 
       tabindex="-1" 
@@ -23,7 +23,7 @@
       type="button" 
       :class="{active:index == 2}" 
       @click="scrollTo(2)">
-      Personal Projects
+      {{ $t("navbar.projects") }}
     </button>
     <button 
       tabindex="-1" 
@@ -31,7 +31,7 @@
       type="button" 
       :class="{active:index == 3}" 
       @click="scrollTo(3)">
-      Contact
+      {{ $t("navbar.contact") }}
     </button>
   </div>
 </template>
