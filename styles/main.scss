@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 
@@ -10,5 +11,6 @@
 @import 'badges';
 @import 'cards';
 @import 'flags';
+@import 'navbar';
 
 @import 'contact';

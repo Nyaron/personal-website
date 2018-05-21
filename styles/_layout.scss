@@ -1,11 +1,3 @@
-.fullpage-container.page-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .container {
   @include media-breakpoint-only(sm) {
     max-width: none;
@@ -13,6 +5,10 @@
 }
 
 .page {
+  background: #EEE;
+  min-height: 100vh;
+  position: relative;
+
   &-1 {
     background: url(/static/img/bkg1.jpg) center center no-repeat #566066;
     background-size: cover;
@@ -24,44 +20,90 @@
     background-size: cover;
     color: #FFF;
   }
-  &-3 {
-    background: #EEE;
-  }
   &-4 {
     background: #252934;
     color: #FFF;
   }
 
   .first-element {
-    margin-top: 35px;
+    padding-top: 30px;
 
     @include media-breakpoint-up(md) {
-      margin-top: 60px;
+      padding-top: 42px;
+    }
+
+    &.hero {
+      padding-top: 15px;
+
+      @include media-breakpoint-up(md) {
+        padding-top: 60px;
+      }
     }
   }
 }
 
 .sticky {
-  bottom: 15vh;
-  position: absolute;
-  text-align: center;
-  transition: all 0.2s ease-in;
-  width: 100%;
-  z-index: 3;
-
   @include media-breakpoint-up(md) {
+    bottom: 15vh;
     font-size: 1.125rem;
+    position: absolute;
+    text-align: center;
+    transition: all 0.2s ease-in;
+    width: 100%;
+    z-index: 3;
   }
 }
 
 .stickied {
-  bottom: auto;
-  font-size: .9rem;
+  @include media-breakpoint-up(md) {
+    bottom: auto;
+    font-size: .75rem;
+    mix-blend-mode: difference;
+    top: 0;
+  }
+}
+
+.nav-toggle {
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  margin-bottom: 0;
   mix-blend-mode: difference;
-  top: 0;
+  padding: 4px 6px;
+  top: 5px;
+  right: 5px;
+  position: absolute;
+  z-index: 3;
 
   @include media-breakpoint-up(md) {
-    font-size: .75rem;
+    display: none;
+  }
+}
+
+.nav-wrapper {
+  background-color: #000;
+  bottom: 0px;
+  opacity: 0;
+  padding-top: 35px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity .5s ease-in;
+  z-index: 2;
+
+  @include media-breakpoint-up(md) {
+    background-color: transparent;
+    opacity: 1;
+    padding-top: 0;
+    position: static;
+  }
+
+  &.is-open {
+    opacity: 1;
   }
 }
 
@@ -70,9 +112,13 @@
   border: 0;
   color: #FFF;
   cursor: pointer;
-  display: inline-block;
+  display: block;
   opacity: .75;
   transition: all 0.2s ease-in;
+
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+  }
 
   &.active {
     opacity: 1;

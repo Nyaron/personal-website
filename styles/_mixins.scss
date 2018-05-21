@@ -1,0 +1,13 @@
+@mixin mat-btn($colour, $font: $colour) {
+  border-color: $colour;
+  color: $font;
+  &:hover,
+  &:focus {
+    background-color: $colour;
+    border-color: $colour;
+    color: #FFF;
+  }
+  &:focus {
+    box-shadow: 0 0 0 .15rem rgba($colour, .25);
+  }
+}

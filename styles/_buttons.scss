@@ -19,7 +19,7 @@ $retro-color-tab-focus: rgba(255,255,255,.15) !default;
   box-shadow: -1px  -1px 1px $retro-color-bg, //top highlight
     0 0 0 4px $retro-color-overlay-medium, //outer shadow
     1px  1px 1px $retro-color-bg-dark, //bottom lowlight
-    inset .0 .0 .0 $retro-color-overlay-dark, //inset shadow    
+    inset .0 .0 .0 $retro-color-overlay-dark, //inset shadow
     inset .5rem .5rem .25rem $retro-color-bg-light; //button gloss
   box-sizing: border-box;
   color: $retro-color-text;
@@ -58,9 +58,9 @@ $retro-color-tab-focus: rgba(255,255,255,.15) !default;
   }
 
   &:active {
-    box-shadow: inset 1px 1px 1px $retro-color-bg, //top highlight   
+    box-shadow: inset 1px 1px 1px $retro-color-bg, //top highlight
       0 0 0 4px $retro-color-overlay-dark, //outer shadow
-      inset -1px -1px 1px $retro-color-bg-light, //bottom lowlight    
+      inset -1px -1px 1px $retro-color-bg-light, //bottom lowlight
       inset .5rem .5rem .75rem $retro-color-bg-dark, //inset shadow
       inset .5rem .5rem .5rem $retro-color-bg-light; //button gloss
   }
@@ -81,3 +81,64 @@ a.retro-button {
     text-decoration: none;
   }
 }
+
+a.mat-btn,
+button.mat-btn,
+*[role="button"].mat-btn {
+  appearance: none;
+  background: transparent;
+  border-radius: 1.5rem;
+  border: 2px solid;
+  box-shadow: none;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  height: 3rem;
+  line-height: 2.8rem;
+  min-width: 3rem;
+  outline: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 .15rem rgba($primary, .25);
+    outline: 0;
+  }
+
+  &.is-primary {
+    color: $primary;
+
+    &:hover,
+    &:focus {
+      color: #FFF;
+    }
+  }
+
+  &.is-btn-linked {
+    @include mat-btn(#0077B5);
+  }
+
+  &.is-btn-twttr {
+    @include mat-btn(#1DA1F2);
+  }
+
+  &.is-btn-twitch {
+    @include mat-btn(#6441A5, #FFF);
+  }
+
+  &.is-btn-yt {
+    @include mat-btn(#F00);
+  }
+
+  &.is-btn-fb {
+    @include mat-btn(#3B5998, #FFF);
+  }
+}
+

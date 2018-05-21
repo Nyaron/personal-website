@@ -30,7 +30,7 @@
       <textarea id="message" v-model="contact.message" rows="4" class="form-control" :placeholder="$t('contact.contact_m_placeholder')" required></textarea>
       <div class="feedback"></div>
     </div>
-    <button class="retro-button" type="submit" :disabled="sendingForm">{{ $t("contact.contact_submit") }}</button>
+    <button class="mat-btn is-primary" type="submit" :disabled="sendingForm">{{ $t("contact.contact_submit") }}</button>
   </form>
 </template>
 

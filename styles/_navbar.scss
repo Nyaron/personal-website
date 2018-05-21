@@ -1,0 +1,86 @@
+.nav-toggle {
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  margin-bottom: 0;
+  mix-blend-mode: difference;
+  padding: 4px 6px;
+  top: 5px;
+  right: 5px;
+  position: fixed;
+  z-index: 3;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.nav-wrapper {
+  background-color: #000;
+  bottom: 0px;
+  display: none;
+  opacity: 0;
+  padding-top: 35px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity .5s ease-in;
+  z-index: 2;
+
+  @include media-breakpoint-up(md) {
+    background-color: transparent;
+    display: block;
+    opacity: 1;
+    padding-top: 0;
+    position: static;
+  }
+
+  &.is-open {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.nav-link {
+  background: transparent;
+  border: 0;
+  color: #FFF;
+  cursor: pointer;
+  display: block;
+  opacity: .75;
+  transition: all 0.2s ease-in;
+
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.sticky {
+  @include media-breakpoint-up(md) {
+    bottom: 15vh;
+    font-size: 1.125rem;
+    position: absolute;
+    text-align: center;
+    transition: all 0.2s ease-in;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+.stickied {
+  @include media-breakpoint-up(md) {
+    bottom: auto;
+    font-size: .75rem;
+    mix-blend-mode: difference;
+    position: fixed;
+    top: 0;
+  }
+}
