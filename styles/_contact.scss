@@ -19,8 +19,33 @@
   }
 }
 
+.lnk-fb,
+.lnk-twttr,
+.lnk-linked {
+  &:hover,
+  &:focus {
+    .clip-caption {
+      color: #FFF;
+      mix-blend-mode: difference;
+    }
+  }
+}
+
 .lnk-twitch {
   background-color: #6441A5;
+
+  &:hover,
+  &:focus {
+    background-image: url(/static/img/twitch.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .clip-caption {
+      color: #FFF;
+      filter: drop-shadow(-1px -1px 3px #6441A5) drop-shadow(1px 1px 3px #6441A5);
+    }
+  }
 
   .description {
     border-left-color: #6441A5;
@@ -54,6 +79,19 @@
 .lnk-yt {
   background-color: #F00;
 
+  &:hover,
+  &:focus {
+    background-image: url(/static/img/youtube.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .clip-caption {
+      color: #FFF;
+      filter: drop-shadow(-1px -1px 3px #F00) drop-shadow(1px 1px 3px #F00);
+    }
+  }
+
   .description {
     border-left-color: #F00;
   }
@@ -61,14 +99,30 @@
 
 .lnk-email {
   background-color: #FED766;
-  color: #252934;
+  color: #000;
 
   &.active {
     color: #FFF;
   }
 
+  &:hover,
+  &:focus {
+    .clip-caption {
+      color: darken($primary, 20);
+    }
+  }
+
   .description {
     border-left-color: #FED766;
+  }
+}
+
+.lnk-gth {
+  &:hover,
+  &:focus {
+    .clip-caption {
+      color: lighten($primary, 20);
+    }
   }
 }
 
@@ -84,7 +138,7 @@
 .twitch-wrapper {
   display: inline-block;
   text-align: left;
-  
+
   > img {
     display: block;
     height: auto;
@@ -95,7 +149,7 @@
 
 .yt-wrapper {
   background-color: #282828;
-  
+
   > div {
     margin: 10px 0 10px 10px !important;
   }

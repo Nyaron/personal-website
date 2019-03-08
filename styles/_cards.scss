@@ -22,7 +22,7 @@
 .card-header,
 .card-footer {
   padding: .5rem .9rem;
-  
+
   @include media-breakpoint-up(md) {
     padding: .75rem 1.25rem;
   }
@@ -37,5 +37,33 @@
 }
 
 .card-custom {
-  
+  overflow: hidden;
+  position: relative;
+}
+
+.card-tag {
+  background: #3498DB;
+  color: #FFF;
+  line-height: 1;
+  padding: 2px 8px;
+  position: absolute;
+  right: -40px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  top: 15px;
+  transform: rotate(45deg);
+  width: 130px;
+
+  &-wip {
+    background-color: #28A745;
+    border: 1px solid gold;
+    box-shadow: 0 0 0 2px #28A745;
+  }
+
+  &-latest {
+    background-color: #F70505;
+    border: 1px solid gold;
+    box-shadow: 0 0 0 2px #F70505;
+  }
 }

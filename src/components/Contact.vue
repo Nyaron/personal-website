@@ -10,95 +10,46 @@
               <span class="lnk-title">{{ $t("contact.contact") }}</span>
             </div>
           </div>
-          <social class="lnk-linked">
-            <div slot="title">
+          <a :href="liUserUri + (this.$i18n.locale !== 'fr' ? '/en' : '')" target="_blank" class="clip-each clip-gradient lnk-linked">
+            <div class="clip-caption">
               <font-awesome-icon :icon="['fab', 'linkedin-in']" />
               <span class="lnk-title">LinkedIn</span>
             </div>
-            <div slot="content">
-              <h2>LinkedIn</h2>
-              <div class="row">
-                <div class="col-sm">
-                  <p class="description">{{ $t("contact.linkedin") }}</p>
-                  <a :href="liUserUri" class="mat-btn is-btn-linked" target="_blank">{{ $t("contact.linkedin_btn") }}</a>
-                </div>
-              </div>
-            </div>
-          </social>
-          <social class="lnk-twttr">
-            <div slot="title">
+          </a>
+          <a :href="twitterUri" target="_blank" class="clip-each clip-gradient lnk-twttr">
+            <div class="clip-caption">
               <font-awesome-icon :icon="['fab', 'twitter']" />
               <span class="lnk-title">Twitter</span>
             </div>
-            <div slot="content">
-              <h2>Twitter</h2>
-              <div class="row">
-                <div class="col-sm">
-                  <p class="description">{{ $t("contact.twitter") }}</p>
-                  <a :href="twitterUri" class="mat-btn is-btn-twttr" target="_blank">{{ $t("contact.twitter_btn") }}</a>
-                </div>
-              </div>
+          </a>
+          <a :href="`https://github.com/${gthName}`" target="_blank" class="clip-each clip-gradient lnk-gth">
+            <div class="clip-caption">
+              <font-awesome-icon :icon="['fab', 'github']" />
+              <span class="lnk-title">Github</span>
             </div>
-          </social>
+          </a>
         </div>
       </div>
       <div class="clip-row">
         <div class="clip-block">
-          <social class="lnk-twitch">
-            <div slot="title">
+          <a :href="`https://www.twitch.tv/${twitchName}`" target="_blank" class="clip-each clip-gradient lnk-twitch">
+            <div class="clip-caption">
               <font-awesome-icon :icon="['fab', 'twitch']" />
               <span class="lnk-title">Twitch</span>
             </div>
-            <div slot="content">
-              <h2>Twitch</h2>
-              <div class="row">
-                <div class="col-sm">
-                  <p class="description">{{ $t("contact.twitch") }}</p>
-                  <a :href="'https://www.twitch.tv/' + twitchName" class="mat-btn is-btn-twitch" target="_blank">{{ $t("contact.twitch_btn") }}</a>
-                </div>
-                <div class="col-sm">
-                  <div class="twitch-wrapper">
-                    <img src="static/img/twitch.gif" alt="Preview">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </social>
-          <social class="lnk-yt">
-            <div slot="title">
+          </a>
+          <a :href="`https://www.youtube.com/channel/${ytId}`" target="_blank" class="clip-each clip-gradient lnk-yt">
+            <div class="clip-caption">
               <font-awesome-icon :icon="['fab', 'youtube']" />
               <span class="lnk-title">YouTube</span>
             </div>
-            <div slot="content">
-              <h2>YouTube</h2>
-              <div class="row">
-                <div class="col-sm">
-                  <p class="description">{{ $t("contact.youtube") }}</p>
-                  <a :href="'https://www.youtube.com/channel/' + ytId" class="mat-btn is-btn-yt" target="_blank">{{ $t("contact.youtube_btn") }}</a>
-                </div>
-                <div class="col-sm">
-                  <div class="yt-wrapper">
-                    <img src="static/img/youtube.gif" alt="Preview">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </social>
-          <social class="lnk-fb">
-            <div slot="title">
+          </a>
+          <a :href="fbUri" target="_blank" class="clip-each clip-gradient lnk-fb">
+            <div class="clip-caption">
               <font-awesome-icon :icon="['fab', 'facebook-f']" />
               <span class="lnk-title">Facebook</span>
             </div>
-            <div slot="content">
-              <h2>Facebook</h2>
-              <div class="row">
-                <div class="col-sm">
-                  <p class="description">{{ $t("contact.facebook") }}</p>
-                  <a :href="fbUri" class="mat-btn is-btn-fb" target="_blank">{{ $t("contact.facebook_btn") }}</a>
-                </div>
-              </div>
-            </div>
-          </social>
+          </a>
         </div>
       </div>
       <svg class="clip-svg">
@@ -113,7 +64,6 @@
 </template>
 
 <script>
-import Social from './Social'
 import ContactForm from './ContactForm'
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 import fontawesome from '@fortawesome/fontawesome'
@@ -125,15 +75,15 @@ fontawesome.library.add(brands, faEnvelope)
 export default {
   name: 'contact',
   props: ['scrollTo'],
-  components: { Social, ContactForm, FontAwesomeIcon },
+  components: { ContactForm, FontAwesomeIcon },
   data() {
     return {
       twitterUri: process.env.TWITTER_URI,
-      twitterId: process.env.TWITTER_ID,
       fbUri: process.env.FB_URI,
       ytId: process.env.YT_ID,
       liUserUri: process.env.LI_USER_URI,
-      twitchName: process.env.TWITCH_NAME
+      twitchName: process.env.TWITCH_NAME,
+      gthName: process.env.GTH_NAME,
     }
   },
   methods: {

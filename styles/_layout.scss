@@ -19,6 +19,14 @@
     background: url(/static/img/bkg2.jpg) center center no-repeat #566066;
     background-size: cover;
     color: #FFF;
+    padding-bottom: 30px;
+  }
+  &-3 {
+    padding-bottom: 30px;
+
+    .card-deck {
+      margin-bottom: 30px;
+    }
   }
   &-4 {
     background: #252934;
@@ -38,6 +46,10 @@
       @include media-breakpoint-up(md) {
         padding-top: 60px;
       }
+    }
+
+    + .row + .row {
+      margin-top: 1em;
     }
   }
 }
@@ -145,7 +157,7 @@
   }
 }
 
-@keyframes "fadeInOut" {
+@keyframes fadeInOut {
   0% {
     opacity: 0;
   }

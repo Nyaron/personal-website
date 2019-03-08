@@ -1,9 +1,9 @@
 <template>
-  <div 
+  <div
     class="clip-each clip-gradient"
     v-on:click.self="showContent"
     v-bind:class="{ active: isActive}">
-    <div 
+    <div
       class="clip-caption"
       v-on:click="showContent">
       <slot name="title">Title</slot>

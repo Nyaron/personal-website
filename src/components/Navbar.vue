@@ -89,7 +89,7 @@ export default {
 
       // Handle index
       document.querySelectorAll('.page').forEach(function(pageElem) {
-        if((pageElem.offsetTop + pageElem.offsetHeight) > window.scrollY && window.scrollY >= pageElem.offsetTop) {
+        if(window.scrollY >= (pageElem.offsetTop - 1)) {
           that.currPage = pageElem.classList.item(1).substr(5, 1);
         }
       });

@@ -1,0 +1,11 @@
+details {
+  display: block;
+  summary {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 80%;
+  }
+  > .card {
+    color: $body-color;
+  }
+}

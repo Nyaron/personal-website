@@ -1,0 +1,45 @@
+{
+  "portfolio": [
+    {
+      "name": "BBM-E Backoffice Migration",
+      "client": "BBM Entertainment",
+      "year": 2018,
+      "tech": [
+        "Vue.js"
+      ],
+      "tag": "latest"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Olympeak Gaming",
+      "url": "https://olympeakgaming.tv",
+      "label": "OlympeakGaming.tv",
+      "img": "static/img/OG_small.png",
+      "tech": [
+        "Vue.js"
+      ]
+    },
+    {
+      "name": "Zythos' Cellar",
+      "url": "https://github.com/Nyaron/zythos-cellar",
+      "label": "See it on github",
+      "tech": [
+        "NativeScript",
+        "Vue.js"
+      ],
+      "tag": "wip"
+    },
+    {
+      "name": "Libraries Demo",
+      "url": "https://github.com/Nyaron/fantastic-library-demo",
+      "label": "See it on github",
+      "tech": [
+        "React.js",
+        "Vue.js",
+        "AngularJS"
+      ],
+      "tag": "wip"
+    }
+  ]
+}

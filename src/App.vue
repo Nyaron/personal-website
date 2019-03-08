@@ -26,128 +26,9 @@
       title="English (Pirate)"></button>
     </div>
     <div class="page-container">
-      <div class="page page-1">
-        <div class="container-fluid">
-          <div class="hero first-element">
-            <h1>
-              {{ $t("landing.welcome") }}
-            </h1>
-            <p>
-              {{ $t("landing.text1") }}
-            </p>
-            <p>
-              {{ $t("landing.text2") }}
-            </p>
-            <p>
-              {{ $t("landing.text3") }}
-            </p>
-            <button
-              type="button"
-              class="mat-btn"
-              @click="moveTo('page-4')">
-                {{ $t("landing.button") }}
-            </button>
-            <div class="scroll-message">
-              {{ $t("landing.scroll") }}
-              <br>
-              <img src="/static/img/scroll1.png" alt="" class="d-none d-xl-inline">
-              <img src="/static/img/scroll2.png" alt="" class="d-inline d-xl-none">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="page page-2">
-        <div class="container">
-          <h2 class="first-element"><span>{{ $t("expertise.title") }}</span></h2>
-          <div class="row">
-            <div class="col-sm">
-              <h3>{{ $t("expertise.subtitle1") }}</h3>
-              <ul class="list-badges">
-                <li>HTML5 / CSS3</li>
-                <li>Sass / Less</li>
-                <li>Javascript / ES6 / jQuery</li>
-                <li>Bootstrap</li>
-                <li>Git</li>
-                <li>Angular</li>
-                <li>Vue.js</li>
-                <li>Gulp</li>
-                <li>Adobe Photoshop</li>
-                <li>PHP</li>
-                <li>SQL</li>
-                <li>{{ $t("expertise.skill_agile") }}</li>
-                <li>{{ $t("expertise.skill_responsive") }}</li>
-                <li>{{ $t("expertise.skill_mobile") }}</li>
-                <li>{{ $t("expertise.skill_crossbrowser") }}</li>
-                <li>{{ $t("expertise.skill_uiux") }}</li>
-              </ul>
-            </div>
-            <div class="col-sm">
-              <h3>{{ $t("expertise.subtitle2") }}</h3>
-              <ul class="list-badges">
-                <li>{{ $t("expertise.skill_unit") }}</li>
-                <li>restAPI</li>
-                <li>NodeJS</li>
-                <li>React</li>
-                <li>Wordpress</li>
-                <li>Symfony ({{ $t("expertise.skill_limited") }})</li>
-                <li>Adobe Illustrator ({{ $t("expertise.skill_limited") }})</li>
-                <li>Adobe Premiere/Adobe After Effects ({{ $t("expertise.skill_limited") }})</li>
-              </ul>
-              <h3>{{ $t("expertise.subtitle3") }}</h3>
-              <div class="scrolling-wrapper">
-                <dl class="row scrolling-content">
-                  <dt class="col-md-5">{{ $t("expertise.job4_name") }}</dt>
-                  <dd class="col-md-7">
-                    {{ $t("expertise.job4_desc") }}
-                  </dd>
-                </dl>
-                <dl class="row scrolling-content">
-                  <dt class="col-md-5">{{ $t("expertise.job3_name") }}</dt>
-                  <dd class="col-md-7">
-                    {{ $t("expertise.job3_desc") }}
-                  </dd>
-                </dl>
-                <dl class="row scrolling-content">
-                  <dt class="col-md-5">{{ $t("expertise.job2_name") }}</dt>
-                  <dd class="col-md-7">
-                    {{ $t("expertise.job2_desc") }}
-                  </dd>
-                </dl>
-                <dl class="row scrolling-content">
-                  <dt class="col-md-5">{{ $t("expertise.job1_name") }}</dt>
-                  <dd class="col-md-7">
-                    {{ $t("expertise.job1_desc") }}
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="page page-3">
-        <div class="container">
-          <h2 class="first-element"><span>{{ $t("projects.title") }}</span></h2>
-          <p>{{ $t("projects.text1") }}</p>
-          <div class="card-deck">
-            <div class="card card-custom" v-for="(item, index) in projects">
-              <img :src="item.img" :alt="item.name" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">{{ item.name }}</h5>
-                <p class="card-text">{{ $t("projects.project" + (index+1) + "_desc") }}</p>
-                <p class="card-text">
-                  <template v-for="tech in item.tech">
-                    <span class="badge badge-primary">{{ tech }}</span>
-                    <i class="spacer"> </i>
-                  </template>
-                </p>
-              </div>
-              <div class="card-footer text-muted">
-                {{ $t("projects.website") }} <a :href="item.url" target='_blank'>{{ item.label }}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <landing :scroll-to="moveTo"></landing>
+      <expertise></expertise>
+      <portfolio></portfolio>
       <div class="page page-4">
         <div class="container">
           <h2 class="first-element"><span>{{ $t("contact.contact_title") }}</span></h2>
@@ -167,31 +48,14 @@
 
 <script>
 import Navbar from './components/Navbar'
+import Landing from './components/Landing'
+import Expertise from './components/Expertise'
+import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
 import ContactForm from './components/ContactForm'
 
 export default {
-  components: { Navbar, 'section-social': Contact, ContactForm },
-  data() {
-    return {
-      projects: [
-        {
-          name:'Olympeak Gaming',
-          url: 'https://olympeakgaming.tv',
-          label: 'OlympeakGaming.tv',
-          img: 'static/img/OG_small.png',
-          tech: ['Vue.js', 'HTML/CSS']
-        },
-        {
-          name:'Hermès Toolkit',
-          url: '#',
-          label: 'WIP',
-          img: 'static/img/hermes_beta.png',
-          tech: ['NodeJS', 'restAPI']
-        },
-      ]
-    }
-  },
+  components: { Navbar, Landing, Expertise, Portfolio, 'section-social': Contact, ContactForm },
   methods: {
     moveTo: function(targetClass) {
       document.querySelector(`.${targetClass}`).scrollIntoView({

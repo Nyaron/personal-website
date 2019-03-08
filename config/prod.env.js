@@ -7,5 +7,6 @@ module.exports = {
   FB_URI: '"!!!URL of the Facebook Page!!!"',
   YT_ID: '"!!!ID of the YouTube Channel!!!"',
   LI_USER_URI: '"!!!URL of the LinkedIn profile!!!"',
-  TWITCH_NAME: '"!!!NAME of the Twitch Channel!!!"'
+  TWITCH_NAME: '"!!!NAME of the Twitch Channel!!!"',
+  GTH_NAME: '"!!!NAME on Github!!!"',
 }
