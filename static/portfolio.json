@@ -17,7 +17,9 @@
       "label": "OlympeakGaming.tv",
       "img": "static/img/OG_small.png",
       "tech": [
-        "Vue.js"
+        "Vue.js",
+        "Vuex",
+        "Firebase"
       ]
     },
     {

@@ -10,19 +10,13 @@
               <span class="lnk-title">{{ $t("contact.contact") }}</span>
             </div>
           </div>
-          <a :href="liUserUri + (this.$i18n.locale !== 'fr' ? '/en' : '')" target="_blank" class="clip-each clip-gradient lnk-linked">
+          <a :href="liUserUri + (this.$i18n.locale !== 'fr' ? '/en' : '')" target="_blank" rel="noopener" class="clip-each clip-gradient lnk-linked">
             <div class="clip-caption">
               <font-awesome-icon :icon="['fab', 'linkedin-in']" />
               <span class="lnk-title">LinkedIn</span>
             </div>
           </a>
-          <a :href="twitterUri" target="_blank" class="clip-each clip-gradient lnk-twttr">
-            <div class="clip-caption">
-              <font-awesome-icon :icon="['fab', 'twitter']" />
-              <span class="lnk-title">Twitter</span>
-            </div>
-          </a>
-          <a :href="`https://github.com/${gthName}`" target="_blank" class="clip-each clip-gradient lnk-gth">
+          <a :href="`https://github.com/${gthName}`" target="_blank" rel="noopener" class="clip-each clip-gradient lnk-gth">
             <div class="clip-caption">
               <font-awesome-icon :icon="['fab', 'github']" />
               <span class="lnk-title">Github</span>
@@ -32,22 +26,22 @@
       </div>
       <div class="clip-row">
         <div class="clip-block">
-          <a :href="`https://www.twitch.tv/${twitchName}`" target="_blank" class="clip-each clip-gradient lnk-twitch">
+          <a :href="`https://www.twitch.tv/${twitchName}`" target="_blank" rel="noopener noreferrer" class="clip-each clip-gradient lnk-twitch">
             <div class="clip-caption">
               <font-awesome-icon :icon="['fab', 'twitch']" />
               <span class="lnk-title">Twitch</span>
             </div>
           </a>
-          <a :href="`https://www.youtube.com/channel/${ytId}`" target="_blank" class="clip-each clip-gradient lnk-yt">
+          <a :href="`https://www.youtube.com/channel/${ytId}`" target="_blank" rel="noopener noreferrer" class="clip-each clip-gradient lnk-yt">
             <div class="clip-caption">
               <font-awesome-icon :icon="['fab', 'youtube']" />
               <span class="lnk-title">YouTube</span>
             </div>
           </a>
-          <a :href="fbUri" target="_blank" class="clip-each clip-gradient lnk-fb">
+          <a :href="twitterUri" target="_blank" class="clip-each clip-gradient lnk-twttr" rel="noopener noreferrer">
             <div class="clip-caption">
-              <font-awesome-icon :icon="['fab', 'facebook-f']" />
-              <span class="lnk-title">Facebook</span>
+              <font-awesome-icon :icon="['fab', 'twitter']" />
+              <span class="lnk-title">Twitter</span>
             </div>
           </a>
         </div>
