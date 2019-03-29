@@ -7,23 +7,22 @@
 .page {
   background: #EEE;
   min-height: 100vh;
+  padding-bottom: 30px;
   position: relative;
 
   &-1 {
     background: url(/static/img/bkg1.jpg) center center no-repeat #566066;
     background-size: cover;
     color: #FFF;
+    padding-bottom: 0;
     text-align: center;
   }
   &-2 {
     background: url(/static/img/bkg2.jpg) center center no-repeat #566066;
     background-size: cover;
     color: #FFF;
-    padding-bottom: 30px;
   }
   &-3 {
-    padding-bottom: 30px;
-
     .card-deck {
       margin-bottom: 30px;
     }

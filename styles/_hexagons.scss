@@ -11,17 +11,19 @@
 .clip-row {
   @include media-breakpoint-up(lg) {
     display: table-row;
-    
-    &:nth-child(even) {
-      .clip-each {
-        transform: translate(125px, -87px);
 
-        &.active {
-          transform: none;
+    @supports(clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)) {
+      &:nth-child(even) {
+        .clip-each {
+          transform: translate(125px, -87px);
+
+          &.active {
+            transform: none;
+          }
         }
       }
     }
-  }  
+  }
 
 }
 
@@ -58,21 +60,26 @@
 }
 
 .clip-each {
-  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-  clip-path: url("#hexagon-clip");
   cursor: pointer;
-  display: block;
-  float: left;
+  display: inline-block;
   margin: 0 auto;
   position: relative;
   transition: padding .5s ease-out;
   z-index: 1;
 
-  &:not(:first-child) {
-    @include media-breakpoint-up(lg) {
-      margin-left: 90px;
+  @supports(clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)) {
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: url("#hexagon-clip");
+    display: block;
+    float: left;
+
+    &:not(:first-child) {
+      @include media-breakpoint-up(lg) {
+        margin-left: 90px;
+      }
     }
   }
+
 
   &.active {
     bottom: 0;

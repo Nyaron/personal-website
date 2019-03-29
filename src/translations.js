@@ -63,7 +63,8 @@ const messages = {
       libraries_demo_desc: 'A little mockup project where I\'m developing the same app using different JS libraries.',
       libraries_demo_label:'@:projects.zythos_cellar_label',
       bbme_backoffice_migration: 'Backoffice Modernisation',
-      bbme_backoffice_migration_desc: 'I was tasked with migrating their backoffice to Bootstrap 4 and to rebuild the existing modules using Vue.js and ES6.'
+      bbme_backoffice_migration_desc: 'I was tasked with migrating their backoffice to Bootstrap 4 and to rebuild the existing modules using Vue.js and ES6.',
+      bbme_backoffice_migration_label: 'BBM Entertainment',
     },
     contact: {
       title: '@:navbar.social',

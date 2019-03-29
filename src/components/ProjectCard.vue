@@ -17,7 +17,7 @@
         </span>
       </p>
     </div>
-    <div v-if="cardData.url" class="card-footer text-muted">
+    <div v-if="cardData.url" class="card-footer">
       <a :href="cardData.url" target='_blank' ref="noopener">{{ $t(`projects.${getTKey(cardData.name)}_label`) }}</a>
     </div>
   </div>

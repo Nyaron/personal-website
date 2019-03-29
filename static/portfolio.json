@@ -3,9 +3,11 @@
     {
       "name": "BBM-E Backoffice Migration",
       "client": "BBM Entertainment",
+      "url": "https://www.bbm-e.com/en/",
       "year": 2018,
       "tech": [
-        "Vue.js"
+        "Vue.js",
+        "Bootstrap 4"
       ],
       "tag": "latest"
     }
@@ -19,6 +21,7 @@
       "tech": [
         "Vue.js",
         "Vuex",
+        "Axios",
         "Firebase"
       ]
     },
